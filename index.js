@@ -10,11 +10,11 @@ normalButton.addEventListener('click', () => startGame('normal'));
 bonusButton.addEventListener('click', () => startGame('bonus'));
 
 // Add touch event listeners to the buttons for touch-enabled devices
-normalButton.addEventListener('touchstart', (event) => {
+normalButton.addEventListener('touchend', (event) => {
   event.preventDefault(); // Prevent the default touch behavior
   startGame('normal');
 });
-bonusButton.addEventListener('touchstart', (event) => {
+bonusButton.addEventListener('touchend', (event) => {
   event.preventDefault(); // Prevent the default touch behavior
   startGame('bonus');
 });
