@@ -91,8 +91,18 @@ p {
   #normalButton {
     margin-bottom: 1em;
   }
-
+  #bonusButton {
+    margin-left: 0;
+  }
   .container {
     padding: 50px;
+  }
+
+  .container-button {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
   }
 }
