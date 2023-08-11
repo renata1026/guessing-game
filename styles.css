@@ -44,7 +44,8 @@ h1 {
   background-color: #15883e;
   height: 48px;
 }
-#normalButton:hover {
+#normalButton:hover,
+#normalButton:focus {
   background-color: #1db954;
 }
 #bonusButton {
@@ -71,7 +72,8 @@ h1 {
   margin-left: 1em;
 }
 
-#bonusButton:hover {
+#bonusButton:hover,
+#bonusButton:focus {
   color: #fff;
   background-color: #616467;
 }
