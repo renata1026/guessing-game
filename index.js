@@ -5,9 +5,19 @@ const bonusButton = document.getElementById('bonusButton');
 // Define the maximum attempts
 const maxAttempts = 5;
 
-// Add event listeners to the buttons
+// Add click event listeners to the buttons for desktops
 normalButton.addEventListener('click', () => startGame('normal'));
 bonusButton.addEventListener('click', () => startGame('bonus'));
+
+// Add touch event listeners to the buttons for touch-enabled devices
+normalButton.addEventListener('touchstart', (event) => {
+  event.preventDefault(); // Prevent the default touch behavior
+  startGame('normal');
+});
+bonusButton.addEventListener('touchstart', (event) => {
+  event.preventDefault(); // Prevent the default touch behavior
+  startGame('bonus');
+});
 
 // Function to start the game based on the chosen edition
 function startGame(edition) {
