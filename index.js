@@ -38,8 +38,9 @@ function playNormalEdition() {
     const guess = parseInt(
       prompt(`Attempt ${attempt}/${maxAttempts}: Enter your guess (1-10):`)
     );
-
-    if (guess < random) {
+    if (isNaN(guess) || guess < 1 || guess > 10) {
+      alert('Please enter a valid number.');
+    } else if (guess < random) {
       alert('Your number was too low. Try again.');
     } else if (guess > random) {
       alert('Your number was too high. Try again.');
@@ -56,20 +57,28 @@ function playNormalEdition() {
   }
 }
 
-// Function for the bonus edition of the game
 function playBonusEdition() {
   const min = parseInt(prompt('Please input the minimum number: '));
   const max = parseInt(prompt('Please input the maximum number: '));
+
+  // Check if inputs are valid numbers
+  if (isNaN(min) || isNaN(max)) {
+    alert('Please enter valid numbers for both minimum and maximum.');
+    return;
+  }
+
   const random = Math.ceil(Math.random() * (max - min)) + min;
 
   for (let attempt = 1; attempt <= 5; attempt++) {
-    const guess = parseInt(
+    let guess = parseInt(
       prompt(
         `Attempt ${attempt}/5: Please guess a number between ${min} and ${max}:`
       )
     );
 
-    if (guess < random) {
+    if (isNaN(guess)) {
+      alert(`Please enter a valid number between ${min} and ${max}.`);
+    } else if (guess < random) {
       alert(
         `Your guess was too low. You have ${5 - attempt} attempts remaining.`
       );
